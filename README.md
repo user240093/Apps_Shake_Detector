@@ -1,30 +1,30 @@
 # Shake Detector App 📱✨
 
-[cite_start]Aplikasi Flutter sederhana yang dirancang untuk mendeteksi guncangan atau goyangan pada perangkat *mobile* menggunakan sensor *Accelerometer*[cite: 3, 507]. [cite_start]Aplikasi ini dibuat untuk memenuhi modul latihan praktikum akses sensor spasial, di mana warna latar belakang layar akan berubah secara dinamis mengikuti kondisi pergerakan perangkat[cite: 1, 507].
+Aplikasi Flutter sederhana yang dirancang untuk mendeteksi guncangan atau goyangan pada perangkat *mobile* menggunakan sensor *Accelerometer*. Aplikasi ini dibuat untuk memenuhi modul latihan praktikum akses sensor spasial, di mana warna latar belakang layar akan berubah secara dinamis mengikuti kondisi pergerakan perangkat.
 
 ---
 
 ## 🚀 Fitur Utama
-* [cite_start]**Real-Time Sensor Detection**: Membaca perubahan percepatan perangkat secara instan pada tiga sumbu koordinat (X, Y, dan Z)[cite: 6].
-* [cite_start]**Dynamic Background Color**: Mengubah warna layar secara dinamis berdasarkan ambang batas guncangan (Default: Biru, Merah saat digoyang, dan Hijau saat perangkat kembali tenang)[cite: 507, 508, 510, 514].
-* [cite_start]**Metrics Dashboard**: Menampilkan nilai koordinat sensor pada layar secara rapi dengan pembatasan format dua angka di belakang koma (`toStringAsFixed(2)`) agar mudah dipantau[cite: 71, 87].
+* **Real-Time Sensor Detection**: Membaca perubahan percepatan perangkat secara instan pada tiga sumbu koordinat (X, Y, dan Z).
+* **Dynamic Background Color**: Mengubah warna layar secara dinamis berdasarkan ambang batas guncangan (Default: Biru, Merah saat digoyang, dan Hijau saat perangkat kembali tenang).
+* **Metrics Dashboard**: Menampilkan nilai koordinat sensor pada layar secara rapi dengan pembatasan format dua angka di belakang koma (`toStringAsFixed(2)`) agar mudah dipantau.
 * **Safe Memory Management**: Implementasi penutupan aliran data sensor (*stream subscription*) secara berkala untuk mencegah terjadinya kebocoran memori (*memory leaks*).
 
 ---
 
 ## 🛠️ Tech Stack & Dependensi
 * **Framework:** Flutter SDK
-* [cite_start]**Sensor Package:** `sensors_plus: ^6.0.1` [cite: 48]
+* **Sensor Package:** `sensors_plus: ^6.0.1` 
 * **Target Platform:** Android & Web Browser
 
 ---
 
 ## 🎛️ Logika Deteksi Pergerakan (Sesuai Modul)
-[cite_start]Aplikasi ini mendengarkan aliran data dari `accelerometerEvents`[cite: 54]. [cite_start]Perubahan warna komponen UI diatur menggunakan pengkondisian (*conditional logic*) berbasis nilai ambang batas percepatan pada sumbu koordinat perangkat[cite: 507, 509]:
+Aplikasi ini mendengarkan aliran data dari `accelerometerEvents`.Perubahan warna komponen UI diatur menggunakan pengkondisian (*conditional logic*) berbasis nilai ambang batas percepatan pada sumbu koordinat perangkat:
 
-* [cite_start]**Kondisi Awal**: Warna default layar diinisialisasi sebagai Biru (`Colors.blue`)[cite: 508].
-* [cite_start]**Kondisi Digoyang**: Jika entakan guncangan melewati batas threshold yang ditentukan, warna state berubah menjadi Merah (`Colors.red`)[cite: 509, 510].
-* [cite_start]**Kondisi Tenang**: Jika perangkat tidak menerima guncangan, warna otomatis dialihkan menjadi Hijau (`Colors.green`)[cite: 512, 514].
+* **Kondisi Awal**: Warna default layar diinisialisasi sebagai Biru (`Colors.blue`).
+* **Kondisi Digoyang**: Jika entakan guncangan melewati batas threshold yang ditentukan, warna state berubah menjadi Merah (`Colors.red`).
+* **Kondisi Tenang**: Jika perangkat tidak menerima guncangan, warna otomatis dialihkan menjadi Hijau (`Colors.green`).
 
 ---
 
